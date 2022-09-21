@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오설록 Logo Design</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+<style>
+
+*{padding: 0; margin: 0;}
+ul, li{list-style: none;}
+a{text-decoration: none; color: inherit;}
+    #mainimg{width: 100%; height: 988px; background-image: url(images_box/osul_main.png);
+    background-repeat: no-repeat; background-position: center center; background-size: cover;}
+
+.box1{width: 100%; height: 2060px; background-image: url(images_box/osul_con1.png);
+        background-repeat: no-repeat; background-position: center center; background-size: cover;}
+.box2{width: 100%; height: 2801px; background-image: url(images_box/osul_con2.png);
+            background-repeat: no-repeat; background-position: center center; background-size: cover;}
+.box3{width: 100%; height: 3554px; background-image: url(images_box/osul_con3.png);
+    background-repeat: no-repeat; background-position: center center; background-size: cover;}
+    
+        
+        .btn li{float: left; width: 62px; height: 62px; text-align: center; font-size: 18px; color: #fff; background-color: #ff8888; border-radius: 50%; line-height: 62px; margin-right: 10px; font-weight: bold; filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2))}
+    .btn{position: fixed; top: 1.8em; right: 1.2em;}
+    .btn li:hover{color: #ff8888; border: 2px solid #ff8888; background-color: rgba(255, 255, 255, 0.2); width: 62px; height: 62px; line-height: 58px;}
+    .img{position: absolute; top: 315px; left: 694px;}
+
+    #menu{position: fixed;
+    right: 3%;
+    top: 92%;
+    font-size: 1rem;}
+    #menu>li {
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    
+    line-height: 40px;
+    background-color: #FF8888;
+    border-radius: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2))
+}
+#menu>li>a{color: #fff; }
+#menu>li:hover{background-color: rgba(255, 255, 255, 0.2); border: 2px solid #FF8888; width: 42px; height: 42px; font-weight: bold; line-height: 38px; color: #ff8888;}
+#menu>li>a:hover{text-decoration: none; color: #ff8888; }
+
+@media (max-width:1304px){
+    #mainimg{width:cover; height: 6508px; background-image: url(images_box/osul_1303.png);
+    background-repeat: no-repeat; background-position: center top; background-size: 100%; z-index: 99;}
+
+    #mainimg img{display: none;}
+}
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script>
+    $(document).ready(function(e) {
+        $('#menu>li>a').on('click', function(e){
+            e.preventDefault();
+            $('html, body').animate({scrollTop:$(this.hash).offset().top}, 1500);
+            return false;
+        });
+    });
+    
+
+    </script>
+<link href="assets/css/theme.css" rel="stylesheet" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+
+<body>
+    <ul id="menu">
+        <li><a href="#mainimg">Top</a></li>
+        
+    </ul>
+    
+<div class="cursor-outer d-none d-md-block"></div>
+    <ul class="btn">
+        <a href="branding.html"><li>Back</li></a>
+        <a href="index.html"><li>Home</li></a>
+    </ul>
+    <div id="mainimg">
+        <div class="img animate__animated animate__fadeInUp"><img src="images_box/osul_logo.png"></div>
+    </div>
+        <div id="contents">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+            
+            
+        </div>
+        <div id="footer"></div>
+</body>
+<script src="assets/js/theme.js"></script>
+</html>

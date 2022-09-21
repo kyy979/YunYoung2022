@@ -1,0 +1,277 @@
+/* 공통 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.inner {
+    width: 1415px;
+    margin: 0 auto;
+}
+
+/* 헤더 */
+#header {
+    width: 100%;
+    height: 66px;
+    line-height: 66px;
+    background-color: #fff8e6;
+}
+
+#header>.inner {
+    width: 1415px;
+    height: 66px;
+    position: relative;
+}
+
+.logo {
+    height: 41px;
+    float: left;
+    padding-top: 10px;
+}
+
+.menu {
+    width: 500px;
+    position: absolute;
+    right: 50px;
+    text-align: center;
+    top: 5px;
+}
+
+.menu li {
+    width: 80px;
+    color: #363431;
+    font-size: 14px;
+    font-family: Noto Sans CJK KR;
+    float: left;
+    margin-left: 30px;
+    font-weight: 500;
+}
+
+.menu::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.menu li:nth-child(4) {
+    height: 50px;
+    width: 79px;
+    border-bottom: 2px solid #f13f3f;
+    margin-left: 45px;
+    color: #f13f3f;
+    font-family: Noto Sans CJK KR;
+    font-weight: 500;
+}
+
+.search {
+    float: right;
+    padding-top: 10px;
+}
+
+.search li {
+    float: left;
+}
+
+.search li:nth-child(2) {
+    padding-left: 30px;
+}
+
+.search::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#header::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/* 메인이미지 */
+#mainimg {
+    width: 100%;
+    height: 360px;
+    background-image: url(../subimg/mainimg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#mainimg>.text_box {
+    width: 200px;
+    position: absolute;
+    left: 612px;
+    top: 75px;
+}
+
+#mainimg>.text_box>h2 {
+    font-size: 30px;
+    color: #f13f3f;
+    font-family: Noto Sans CJK KR;
+}
+
+#mainimg>.text_box>.line {
+    width: 63px;
+    height: 35px;
+    border-bottom: 2px solid #f13f3f;
+}
+
+.box1 {
+    width: 100%;
+    height: 994px;
+}
+
+.box1>.inner {
+    width: 1415px;
+    height: 994px;
+    position: relative;
+}
+
+.box1>.inner>.box1_logo {
+    width: 38px;
+    height: 32px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 28px;
+}
+
+.box1>.inner>h1 {
+    width: 147px;
+    position: absolute;
+    font-size: 39px;
+    font-family: Noto Sans CJK KR;
+    color:
+        #363431;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 78px;
+}
+
+.box1>.inner>.box1_menu {
+    width: 920px;
+    height: 43px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 160px;
+}
+
+.box1>.inner>.box1_menu>li {
+    float: left;
+    font-size: 15px;
+    text-align: center;
+    line-height: 43px;
+    color: #403a3c;
+    font-family: Noto Sans CJK KR;
+    width: 164px;
+    height: 43px;
+    border-radius: 30px;
+    background-color: #f2f2f2;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.box1>.inner>.box1_menu>li:nth-child(2) {
+    background-color: #f35251;
+    color: #fff8e6;
+    width: 164px;
+    height: 43px;
+    font-family: Noto Sans CJK KR;
+}
+
+.box1>.inner>.text_box {
+    width: 898px;
+    height: 599px;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 246px;
+}
+
+.box1>.inner>.text_box>h2 {
+    font-size: 25px;
+    color: #403a3c;
+    margin: 0 auto;
+    padding-top: 43px;
+    padding-bottom: 40px;
+    width: 273px;
+    height: 28px;
+    font-family: Noto Sans CJK KR;
+    font-weight: normal;
+}
+.box1>.inner>.text_box>h2>span{font-size: 25px;
+    color: #403a3c; font-weight: bold; padding-left: 5px;}
+.box1>.inner>.text_box>.text_img{width: 659px; height: 465px; margin: 0 auto;}
+.box1>.inner>.dot{width: 96px; height: 11px; position: absolute; bottom:100px; left: 0;
+    right: 0;
+    margin: 0 auto;}
+
+/* 푸터 */
+#footer {
+    height: 84px;
+    background-color: #fff8e6;
+}
+
+#footer>.inner {
+    width: 1415px;
+    position: relative; height: 84px;
+}
+
+.footer_logo {
+    float: left;
+    width: 110px;
+    height: 20px;
+    margin-top: 20px;
+}
+
+
+#footer>.inner>p {
+    width: 700px;
+    position: absolute;
+    left: 164px;
+    font-family: Noto Sans CJK KR;
+    color: #403a3c;
+    top: 30px;
+}
+
+.sns {
+    float: right;
+    padding-top: 25px;
+}
+
+.sns li {
+    width: 34px;
+    height: 34px;
+    float: left;
+    padding-left: 20px;
+}
+
+.sns li>img {
+    width: 100%;
+}
+
+.sns::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#footer>.inner::after {
+    display: block;
+    content: "";
+    clear: both;
+}

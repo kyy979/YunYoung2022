@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빨간펜</title>
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    mobile_menu();
+});
+
+function mobile_menu(){
+    /* 변수 선언 */
+    var $menu = null;
+    var $left_gnb = null; // 영역 전체
+    var $depth1_wrap = null;
+    var $depth1 = null;
+    var $depth1_btn = null;
+    
+    /* 시작 함수 */
+    function start(){
+        init();
+        init_event();
+    }
+    /* 변수 초기화 함수 */
+    function init(){
+        $menu = $('.menu');
+        $left_gnb = $('.left_gnbWrap'); // 영역 전체
+        $depth1_wrap = $('.left_gnb>li');
+        $depth1 = $depth1_wrap.children('ul');
+        $depth1_btn = $depth1_wrap.children('a');
+    }
+    /* 이벤트 함수 */
+    function init_event(){
+        
+        /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+        $menu.click(function(event){
+            event.preventDefault();
+            $left_gnb.addClass('on');
+        });
+        
+        /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+        $('.close').click(function(event){
+            event.preventDefault();
+
+            $left_gnb.removeClass('on');
+            
+            // x버튼 누르면 시간차 약간두고 소메뉴 닫히게 하기
+            setTimeout(function(){
+                $depth1_btn.removeClass('on');
+                $depth1.slideUp();
+            },300)
+        });
+        
+        /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        
+        /* 디바이스 크기 변경시 모바일 메뉴영역 숨기기 */
+        $(window).resize(function(){
+            $left_gnb.removeClass('on');
+        });
+    }
+    
+    start(); // 시작 호출
+}
+</script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <ul class="icon">
+                <li><img src="img/icon1.png" alt="선물모양"></li>
+                <li>이벤트</li>
+                <li><img src="img/icon2.png" alt="돋보기"></li>
+                <li>상품 검색</li>
+                
+                <!-- 초기화 --> 
+            </ul>
+            <a href="index.html"><div class="logo">
+                <img src="img/logo.png" alt="logo">
+            </div></a>
+            <ul class="menu_1">
+                <li><a href="about.html">빨간펜은?</a></li>
+                <li><a href="about.html">독서</a></li>
+                <li><a href="about.html">학습</a></li>
+                <li><a href="about.html">외국어</a></li>
+                <li><a href="about.html">고객지원</a></li>
+            
+                <!-- 초기화 --> 
+            </ul>
+            <div class="menu">
+                <a href="#"><img src="img/icon3.png" alt="search"></a>
+              </div>
+              <nav class="left_gnbWrap">
+                          <a href="#" class="close"><img src="img/close.png" alt="search"></a>
+                          <ul class="left_gnb">
+                            <li>
+                                  <a href="index_sub.html">빨간펜은?</a>
+                                  <ul>
+                                      <li><a href="index_sub.html">빨간펜 스토리</a></li>
+                                      <li><a href="#">빨간펜 선생님</a></li>
+                                      <li><a href="#">빨간펜 센터</a></li>
+                                      <li><a href="#">빨간펜 소식</a></li>
+                                  </ul>
+                              </li>
+                              <li>
+                                  <a href="#">독서</a>
+                                  <ul>
+                                      <li><a href="#">전집</a></li>
+                                      <li><a href="#">학습융합</a></li>
+                                      <li><a href="#">매거진</a></li>
+                                      
+                                  </ul>
+                              </li>
+                              <li>
+                                  <a href="#">학습</a>
+                                  <ul>
+                                      <li><a href="#">아이캔두</a></li>
+                                      <li><a href="#">스마트빨간펜</a></li>
+                                      <li><a href="#">REDPEN</a></li>
+                                      
+                                  </ul>
+                              </li>
+                              <li>
+                                  <a href="#">외국어</a>
+                                  <ul>
+                                      <li><a href="#">도요새잉글리쉬</a></li>
+                                      <li><a href="#">도요새중국어</a></li>
+                                      
+                                  </ul>
+                              </li>
+                              <li>
+                                <a href="#">고객지원</a>
+                                <ul>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">소비자 알림 센터</a></li>
+                                    <li><a href="#">스마트기기</a></li>
+                                    <li><a href="#">올스토리펜 학습자료</a></li>
+                                </ul>
+                                <li>
+                                    <a href="#">이벤트</a>
+                                    <ul>
+                                        <li><a href="#">전체 이벤트</a></li>
+                                        <li><a href="#">이달의 구매혜택</a></li>
+                                        <li><a href="#">당첨자 발표</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">우리아이 진단</a>
+                                    <ul>
+                                        <li><a href="#">KED-S 검사</a></li>
+                                        <li><a href="#">KED-i 검사</a></li>
+                                        <li><a href="#">AI ELT 검사</a></li>
+                                        
+                                    </ul>
+                                </li>
+                            </li>
+                          </ul>
+                      </nav>
+        </div>
+        <div id="mainimg">
+            <div class="inner">
+                <div class="main_l">
+                    <img src="img/main_textimg.jpg" alt="title">
+                    <div class="date"><img src="img/main_text2.jpg" alt="날짜"></div>
+                    
+                    <div class="btn">자세히 보기</div>
+                    <img src="img/icon4.png" alt="스크롤">
+                </div>
+                <div class="main_r">
+                    <img src="img/main_logo.jpg" alt="logo">
+                    <img src="img/main_img.png" alt="cardimg"> 
+                </div>
+                <!-- 초기화 -->
+            </div>
+        </div>
+        <div id="t_mainimg">
+        
+        </div>
+        <div id="m_mainimg">
+            <div><img src="img/m_1.jpg"></div>
+            <div><img src="img/m_2.jpg"></div>
+            <div><img src="img/m_3.jpg"></div>
+            <div><img src="img/m_4.jpg"></div>
+            <div><img src="img/m_5.jpg"></div>
+            
+            
+            
+            
+            
+        </div>
+        <div id="contents">
+            <div class="box1">
+                <div class="inner">
+                    <h1>영상으로 만나는 <span><img src="img/text_logo.png" alt="logo"></span>이야기</h1>
+                    <div class="box1_set">
+                        <div class="box1_l">
+                            <div class="con_btn">더보기</div>
+                            <div class="con_text">
+                                <h2>아이캔두 누리키즈 CF</h2>
+                                <P>저절로, 알아서, 하고싶게!<br>공부 습관을 만드는 내 아이 맞춤 Ai 학습</P>
+                                <img src="img/contents1_img1.png" alt="1">
+                            </div>
+                        </div>
+                        <div class="box1_c">
+                            <div class="con_btn">더보기</div>
+                            <div class="con_text">
+                                <h2>아이캔두AiCANDO CF(제품편)</h2>
+                                <P>세상에 없던 새로운 차원의 Ai 학습<br>아이캔두를 만나보세요!</P>
+                                <img src="img/contents1_img2.png" alt="2">
+                            </div>
+                        </div>
+                        <div class="box1_r">
+                            <div class="con_btn">더보기</div>
+                            <div class="con_text">
+                                <h2>아이캔두AiCANDO CF(브랜딩편)</h2>
+                                <P>국민 엄친아 '이승기',<br>승리호의 꽃님이 '박예린'과 함께! 아이캔두!</P>
+                                <img src="img/contents1_img3.png" alt="3">
+                            </div>
+                        </div>
+                        <!-- 초기화 -->
+                    </div>
+
+                </div>
+            </div>
+            <div class="box2">
+                <div class="inner">
+                    <h1>우리아이에게 딱 맞는 <span><img src="img/text_logo2.png" alt="logo"></span> 찾아보셨나요?</h1>
+                    <div class="box2_set">
+                        <div class="box2_l">
+                            <div class="box2_l_top">
+                                <h2><span>보다 정확하게</span><br>취약점 공략</h2>
+                                <p>·KED-i 검사  ·KED-S 검사  ·AI ELT 검사</p>
+                                <div class="box2_btn">검사하기</div>
+                            </div>
+                            <div class="box2_l_bottom">
+                                <h2><span>국내 NO.1 교육기업 빨간펜!</span><br>생생한 체험 후기!</h2>
+                                <div class="box2_btn">보러가기</div>
+                            </div>
+                        </div>
+                    
+                        <div class="box2_r">
+                            <div class="box2_r1">
+                                <div class="box2_title">#놀이처럼 배우는</div>
+                                <div class="box2_rset">
+                                    <div class="img1"><img src="img/box2_img1.jpg"></div>
+                                    <div class="box2_text">
+                                    <h3>조물조물 사회놀이</h3>
+                                    <p>팝업북과 스마트 활동북으로<br>만지고, 만들고, 경험하면서···</p>
+                                    </div>
+                                    <img class="img2" src="img/box2_text.jpg">
+                                </div>
+                                <div class="box2_btn_2">더보기</div>
+                            </div>
+                            <div class="box2_r2">
+                                <div class="box2_title">#초등 필독서 패키지</div>
+                                <div class="box2_rset">
+                                    <div class="img1">
+                                        <img  src="img/box2_img2.jpg">
+                                    </div>
+                                    <div class="box2_text">
+                                    <h3>호시탐탐 문화유산</h3>
+                                    <p>교과서에 나오는 문화유산을<br>입체적으로 접근하여 오천 년···</p>
+                                </div>
+                                <img class="img2" src="img/box2_text2.jpg">
+                                </div>
+                                <div class="box2_btn_2">더보기</div>
+                    
+                            </div>
+                            <!-- 초기화 -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="box3">
+                <div class="inner">
+                    <div class="box3_l">
+                        <h2>더 많은 빨간펜 소식 <img src="img/con3_text1.png"></h2>
+                        <ul class="box3_img">
+                            <li><img src="img/contents3_img1.png"></li>
+                            <li><img src="img/contents3_img2.png"></li>
+                            <li><img src="img/contents3_img3.png"></li>
+                        </ul>
+
+                    </div>
+                    <div class="box3_r">
+                        <h2>더 많은 빨간펜 소식 <img src="img/con3_text2.png"></h2>
+                        <ul class="box3_img">
+                            <li><img src="img/contents3_img4.png"></li>
+                            <li><img src="img/contents3_img5.png"></li>
+                        </ul>
+                    </div>
+                    <!-- 초기화 -->
+
+                </div>
+            </div>
+
+        </div>
+        <div id="footer">
+            <div class="inner">
+                <div class="footer_text">
+                    <p>사업자등록번호 : 496-86-02009    통신판매업 신고번호 : 제2020-서울중구-2375호<br>
+                        방문판매업 신고번호 : 제2020-서울중구-0014호    전화권유판매업 신고번호 : 제2020-서울중구-0011호<br>대표이사 : 복의순, 신영욱    (주)교원 서울시 중구 을지로 51 (을지로2가 6번지)<br>고객센터: 1577- 6688 (월-금 09:00~21:00, 토 10:00~17:00, 일/공휴일 휴무)</p>
+                        <p>*고객센터(콜센터) 이용 시 통신요금이 부과됩니다.</p>
+                        <p>COPYRIGHT(C)KYOWON, ALL RIGHTS RESERVED</p>
+                </div>
+                <div class="footer_logo">
+                    <img src="img/f_logo.png" alt="logo">
+                </div>
+                <!-- 초기화 -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

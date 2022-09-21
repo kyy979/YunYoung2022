@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about
+    </title>
+     <!-- favicon -->
+     <link rel="shortcut icon" href="img/favicon.ico" type="image/png">
+ 
+   
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script>
+    $(document).ready(function(e) {
+        $('#menu_a>li>a').on('click', function(e){
+            e.preventDefault();
+            $('html, body').animate({scrollTop:$(this.hash).offset().top}, 1000);
+            return false;
+        });
+    });
+    
+    </script>
+
+    <link href="css/style.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    mobile_menu();
+});
+
+function mobile_menu(){
+    /* 변수 선언 */
+    var $menu = null;
+    var $left_gnb = null; // 영역 전체
+    var $depth1_wrap = null;
+    var $depth1 = null;
+    var $depth1_btn = null;
+    
+    /* 시작 함수 */
+    function start(){
+        init();
+        init_event();
+    }
+    /* 변수 초기화 함수 */
+    function init(){
+        $menu = $('.menu_1');
+        $left_gnb = $('.left_gnbWrap'); // 영역 전체
+        $depth1_wrap = $('.left_gnb>li');
+        $depth1 = $depth1_wrap.children('ul');
+        $depth1_btn = $depth1_wrap.children('a');
+    }
+    /* 이벤트 함수 */
+    function init_event(){
+        
+        /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+        $menu.click(function(event){
+            event.preventDefault();
+            $left_gnb.addClass('on');
+        });
+        
+        /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+        $('.close').click(function(event){
+            event.preventDefault();
+
+            $left_gnb.removeClass('on');
+            
+            // x버튼 누르면 시간차 약간두고 소메뉴 닫히게 하기
+            setTimeout(function(){
+                $depth1_btn.removeClass('on');
+                $depth1.slideUp();
+            },300)
+        });
+        
+        /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        
+        /* 디바이스 크기 변경시 모바일 메뉴영역 숨기기 */
+        $(window).resize(function(){
+            $left_gnb.removeClass('on');
+        });
+    }
+    
+    start(); // 시작 호출
+}
+</script>
+
+  <script src="jquery-3.1.1.min.js"></script>
+  <script src="scripts.js"></script>
+</head>
+<body>
+ 
+
+
+    <div id="wrap">
+        <ul id="menu_a">
+            <li><a href="#box1">Brand</a></li>
+            <li><a href="#box2">History</a></li>
+            <li><a href="#box3">Award</a></li>
+            <li><a href="#box4">Mind</a></li>
+            <li><a href="#box5">CSR</a></li>
+        </ul>
+
+
+    
+        <div id="header">
+            <div class="menu_1">
+                <a href="#"><img src="img/menu.png" alt="search"></a>
+              </div>
+              <div class="left_gnbWrap">
+                          <a href="#" class="close"><img src="img/close.png" alt="search"></a>
+                          <ul class="left_gnb">
+                            <li>
+                                <a href="about.html">ABOUT</a>
+                                  <ul>
+                                    <li><a href="about.html">Brand</a></li>
+                                    <li><a href="about.html">History</a></li>
+                                    <li><a href="about.html">Award</a></li>
+                                    <li><a href="about.html">경영정보</a></li>
+                                    <li><a href="about.html">CSR</a></li>
+                                  </ul>
+                              </li>
+                              <li>
+                                <a href="product.html">PRODUCT</a>
+                                  <ul>
+                                    <li><a href="product.html">Food Container</a></li>
+                                    <li><a href="product.html">Beverageware</a></li>
+                                    <li><a href="product.html">Cookware</a></li>
+                                    <li><a href="product.html">Small Appliance</a></li>
+                                      
+                                  </ul>
+                              </li>
+                              <li>
+                                <a href="story.html">STORY</a>
+                                  <ul>
+                                    <li><a href="story.html">News</a></li>
+                                    <li><a href="story.html">Lounge</a></li>
+                                    <li><a href="story.html">Now</a></li>
+                                      
+                                  </ul>
+                              </li>
+                              <li>
+                                <a href="career.html">CAREER</a>
+                                  <ul>
+                                    <li><a href="career.html">사내문화</a></li>
+                                    <li><a href="career.html">채용모집</a></li>
+                                      
+                                  </ul>
+                              </li>
+                              
+                            </li>
+                          </ul>
+                      </nav>
+        </div>
+            <ul class="menu pointer">
+                <li></li>
+                <li><a href="about.html">ABOUT</a>
+                    <div class="nav_box">
+                        <ul class="menu2">
+                            <li><a href="about.html">Brand</a></li>
+                                <li><a href="about.html">History</a></li>
+                                <li><a href="about.html">Award</a></li>
+                                <li><a href="about.html">경영정보</a></li>
+                                <li><a href="about.html">CSR</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="product.html">PRODUCT</a>
+                    <div class="nav_box">
+                        <ul class="menu2">
+                            <li><a href="product.html">Food Container</a></li>
+                                <li><a href="product.html">Beverageware</a></li>
+                                <li><a href="product.html">Cookware</a></li>
+                                <li><a href="product.html">Small Appliance</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="story.html">STORY</a>
+                    <div class="nav_box">
+                        <ul class="menu2">
+                            <li><a href="story.html">News</a></li>
+                                <li><a href="story.html">Lounge</a></li>
+                                <li><a href="story.html">Now</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="career.html">CAREER</a>
+                    <div class="nav_box">
+                        <ul class="menu2">
+                            <li><a href="career.html">사내문화</a></li>
+                            <li><a href="career.html">채용모집</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="logo"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+            <ul class="search">
+                <li class="pointer"><img src="img/shop.png"> 락앤락몰</li>
+                <li class="pointer"><img src="img/shop.png"></li>
+                <li class="pointer">
+                    <select>
+                    <option>KR</option>
+                    <option>EG</option>
+                    </select>
+                </li>
+                <li class="pointer"><img src="img/search.png"></li>
+                <!-- 초기화 -->
+            </ul>
+            <!-- 초기화 -->
+        </div>
+        <div id="s1_mainimg">
+            <div class="s1_main_t animate__animated animate__fadeInUp">
+                <h1>About</h1>
+                <h3>더 건강하게 더 편리하게, 라이프스타일 크리에이터</h3>
+                <p>락앤락은 소비자를 이롭게 하는 것이야말로 세상을 이롭게 하는 것이라고 믿습니다.<br>이러한 사명감으로, 소비자들의 삶을 더욱 건강하고 편리하게 하고자 합니다.</p>
+            </div>
+        </div>
+        <div id="s1_contents">
+            <div class="s1_box1" id="box1">
+                <div class="inner">
+                    <div class="s1_box1_t">
+                        <h1>Brand</h1>
+                        <h2>브랜드 이야기</h2>
+                        <h4>우리는 사람들의 삶(Life)과 생동감(Live), 감정(Love)들을 이어주는<br>(Linked) 마음을 담아 제품을 만들고 생활 혁신(Platform)을 이룹니다.</h4>
+                        <h4 class="m_s1_box1_h4">우리는 사람들의 삶(Life)과 생동감(Live), 감정(Love)들을 <br>이어주는(Linked) 마음을 담아 제품을 만들고<br>생활 혁신(Platform)을 이룹니다.</h4>
+                        <div class="btn pointer">더보기</div>
+                    </div>
+                </div>
+            </div>
+            <div class="s1_box2" id="box2">
+                <div class="s1_box2_img"></div>
+                <div class="inner">
+                    <div class="s1_box2_t">
+                        <h1>History</h1>
+                        <h2>글로벌 소비자와 함께해온 변화와 혁신의 락앤락</h2>
+                        <h4>1978년 설립 이후 밀폐용기의 혁신을 넘어 생활 혁신 브랜드로서 변화와<br>혁신을 거듭해 온 락앤락의 역사를 소개합니다.</h4>
+                        <h4 class="m_s1_box2_h4">1978년 설립 이후 밀폐용기의 혁신을 넘어 생활 혁신<br>브랜드로서 변화와 혁신을 거듭해 온<br>락앤락의 역사를 소개합니다.</h4>
+                        
+                        <div class="btn pointer">더보기</div>
+                    </div>
+                </div>
+            </div>
+            <div class="s1_box3" id="box3">
+                <div class="inner">
+                    <div class="s1_box3_img">
+                        <div class="s1_box3_l">
+                         <h1>Award</h1>
+                         <div class="icon"><img src="img/1_con3icon.jpg"></div>
+                         <h4>2022 iF 디자인 어워드</h4>
+                         <div class="btn pointer">더보기</div>
+                         </div>
+                        <div class="s1_box3_r"></div>
+                        <!-- 초기화 -->
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="s1_box4" id="box4">
+                <div class="inner">
+                    <div class="s1_box4_t">
+                        <h1>락앤락 마인드</h1>
+                        <h2>사람중심의 디자인 사고로 생활 혁신을 창조합니다.</h2>
+                        <h4>락앤락의 모든 활동의 중심에는 소비자가 있습니다. 소비자 삶의 변화를 관찰하고<br>공감하며 얻은 통찰로 미래를 그리며 디자인과 기술을 담아 오늘을 실현합니다.<br>구성원 개개인의 전문성과 역량을 바탕으로 믿음을 통해 함께 협업하고<br>세상을 이롭게 하는 것이야 말로 가장 중요한 가치라고 믿고 있습니다.</h4>
+                        <h2 class="m_s1_box4_h2">사람중심의 디자인 사고로<br>생활 혁신을 창조합니다.</h2>
+                        <h4 class="m_s1_box4_h4">락앤락의 모든 활동의 중심에는 소비자가 있습니다.<br>소비자 삶의 변화를 관찰하고 공감하며 얻은 통찰로<br>미래를 그리며 디자인과 기술을 담아 오늘을 실현합니다.<br>구성원 개개인의 전문성과 역량을 바탕으로 믿음을 통해<br>함께 협업하고 세상을 이롭게 하는 것이야 말로<br>가장 중요한 가치라고 믿고 있습니다.</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="s1_box5" id="box5">
+                <div class="inner">
+                    <div class="s1_box5_img">
+                        <div class="s1_box5_t">
+                           <h1>CSR</h1>
+                           <h2>환경과 사람을 존중하며 자원순환을 선도합니다.</h2>
+                           <h4>환경과 사람을 생각하는 기업으로 '러브 포 플래닛'등 자원순환 캠페인을 통해<br>세상과 소비자의 삶에 기여하는 노력을 지속적이고도 다양하게 진행하고<br>있습니다.</h4>
+                           <h2 class="m_s1_box5_h2">환경과 사람을 존중하며<br>자원순환을 선도합니다.</h2>
+                           <h4 class="m_s1_box5_h4">환경과 사람을 생각하는 기업으로 '러브 포 플래닛'등<br>자원순환 캠페인을 통해 세상과 소비자의 삶에<br>기여하는 노력을 지속적이고도 다양하게 진행하고<br>있습니다.</h4>
+                           <div class="btn pointer">더보기</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="inner">
+                <div class="footer_l">
+                    <div class="f_logo"><a href="index.html"><img src="img/footer_logo.png" alt="logo"></a></div>
+                    <p>글로벌 네트워크 | 문의 | <span>개인정보처리방침</span> | 윤리경영 | 사이트맵</p>
+                    <p>(주)락앤락, 서울특별시 중구 세종대로 14, 20층<br>
+                    (남대문로5가, 그랜드센트럴 A동) 대표: 김성훈, 김성태<br>사업자등록번호: 214-85-34765</p>
+                    <p>© 2021 LocknLock Co. All Rights R eserved.</p>
+                </div>
+                <div class="footer_r">
+                    <ul class="footer_menu pointer">
+                        <li><a href="about.html">ABOUT</a>
+                            <ul>
+                                <li><a href="about.html">Brand</a></li>
+                                <li><a href="about.html">History</a></li>
+                                <li><a href="about.html">Award</a></li>
+                                <li><a href="about.html">경영정보</a></li>
+                                <li><a href="about.html">CSR</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="product.html">PRODUCT</a>
+                            <ul>
+                                <li><a href="product.html">Food Container</a></li>
+                                <li><a href="product.html">Beverageware</a></li>
+                                <li><a href="product.html">Cookware</a></li>
+                                <li><a href="product.html">Small Appliance</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li><a href="story.html">STORY</a>
+                            <ul>
+                                <li><a href="story.html">News</a></li>
+                                <li><a href="story.html">Lounge</a></li>
+                                <li><a href="story.html">Now</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li><a href="career.html">CAREER</a>
+                            <ul>
+                                <li><a href="career.html">사내문화</a></li>
+                                <li><a href="career.html">채용모집</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <select>
+                                <option>Family Site</option>
+                                <option>락앤락몰</option>
+                                <option>엘엘랩스</option>
+                            </select>
+                        </li>
+                        <!-- 초기화 -->
+                    </ul>
+                    <ul class="m_footer_menu">
+                        <li>
+                            <select>
+                                <option><a href="about.html">ABOUT</a></option>
+                                <option>Brand</option>
+                                <option>History</option>
+                                <option>Award</option>
+                                <option>경영정보</option>
+                                <option>CSR</option>
+                            </select>
+                        
+                        </li>
+                        <li>
+                            <select>
+                                <option>PRODUCT</option>
+                                <option>Food Container</option>
+                                <option>Beverageware</option>
+                                <option>Cookware</option>
+                                <option>Small Appliance</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select>
+                                <option>STORY</option>
+                                <option>News</option>
+                                <option>Lounge</option>
+                                <option>Now</option>
+                                
+                            </select>
+                            
+                        </li>
+                        <li>
+                            <select>
+                                <option>CAREER</option>
+                                <option>사내문화</option>
+                                <option>채용모집</option>
+                                
+                                
+                            </select>
+                            
+                        </li>
+                        <li>
+                            <select>
+                                <option>Family Site</option>
+                                <option>락앤락몰</option>
+                                <option>엘엘랩스</option>
+                            </select>
+                        </li>
+                        <!-- 초기화 -->
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
