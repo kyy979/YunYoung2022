@@ -36,9 +36,9 @@
     #screens{background-color: #f3f3f3;}
     html, body{background-color: #f3f3f3;}
         a{text-decoration: none; color: inherit;}
-.btn li{float: left; width: 62px; height: 62px; text-align: center; font-size: 18px; color: #fff; background-color: #ff8888; border-radius: 50%; line-height: 62px; margin-right: 10px; font-weight: bold; filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2))}
-        .btn{position: fixed; top: 1.8em; right: 1.2em; z-index: 999;}
-    .btn li:hover{color: #ff8888; border: 2px solid #ff8888; background-color: rgba(255, 255, 255, 0.2); width: 62px; height: 62px; line-height: 58px;}
+.btnt li{float: left; width: 62px; height: 62px; text-align: center; font-size: 18px; color: #fff; background-color: #ff8888; border-radius: 50%; line-height: 62px; margin-right: 10px; font-weight: bold; filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2))}
+        .btnt{position: fixed; top: 1.8em; right: 1.2em; z-index: 999;}
+    .btnt li:hover{color: #ff8888; border: 2px solid #ff8888; background-color: rgba(255, 255, 255, 0.2); width: 62px; height: 62px; line-height: 58px;}
 video {width:100%; margin: 0 auto;}
 .video {
     width: 45.3%;
@@ -93,6 +93,40 @@ background-position: center top; background-repeat: no-repeat; background-size: 
     margin-top: 5.2%;
 }
 }
+@media (max-width:1400px){
+    .video {
+    width: 65%;
+    position: absolute;
+    left: 17.5%;
+    margin-top: 5.2%;
+}
+}
+@media (max-width:1180px){
+    
+    .btnt li{float: left; width: 40px; height: 40px; text-align: center; font-size: 12px; color: #fff; background-color: #ff8888; border-radius: 50%; line-height: 40px; margin-right: 10px; font-weight: bold; filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2))}
+    .btnt{position: fixed; top: 1rem; right: 0.5rem;}
+    .btnt li:hover{color: #ff8888; border: 2px solid #ff8888; background-color: rgba(255, 255, 255, 0.2); width: 40px; height: 40px; line-height: 36px;}
+
+    
+    
+}
+
+@media (max-width:820px){
+    
+.btnt li{margin-bottom: 10px;}
+
+}
+@media (max-width:390px){
+    .video {
+    width: 90%;
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+}
+    
+}
+
     </style>
 </head>
 <script src="assets/js/theme.js"></script>
@@ -116,7 +150,7 @@ background-position: center top; background-repeat: no-repeat; background-size: 
         
     </ul>
     <div class="cursor-outer d-none d-md-block"></div>
-    <ul class="btn">
+    <ul class="btnt">
         <a href="../webdesign.html"><li>Back</li></a>
         <a href="../index.html"><li>Home</li></a>
     </ul>

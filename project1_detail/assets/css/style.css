@@ -132,6 +132,12 @@ p {
     height: 52px;
     margin-top: 250px;
 }
+@media(max-width:390px) {
+    .main-btn {
+        
+        margin-top: 565px;
+    }
+}
 
 .main-btn::before {
     position: absolute;
@@ -1202,7 +1208,7 @@ p {
 
 @media(max-width:767px) {
     .banner-area .banner-items .banner-thumb img {
-        width: 50%
+        width: 90%
     }
 }
 
