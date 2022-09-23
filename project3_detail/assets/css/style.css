@@ -131,12 +131,13 @@ p {
     z-index: 10;
     height: 52px;
     margin-top: 320px;
+    margin-left: 77px;
     
 }
 @media(max-width:390px) {
     .main-btn {
         
-        margin-left: 80px;
+        margin-left: 90px;
     }
 }
 
