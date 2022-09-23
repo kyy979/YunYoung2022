@@ -1203,7 +1203,7 @@ p {
 
 @media(max-width:767px) {
     .banner-area .banner-items .banner-thumb img {
-        width: 50%
+        width: 100%
     }
 }
 
