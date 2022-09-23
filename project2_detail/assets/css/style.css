@@ -1857,7 +1857,11 @@ p {
     
     z-index: 1;
 }
-
+@media(max-width:390px) {
+    .about-area{
+        background-size: 130%;
+    }
+}
 
 
 .about-area .about-shape-1 {
@@ -1974,7 +1978,8 @@ p {
 
 @media(max-width:767px) {
     .about-area .about-thumb {
-        padding-left: 0
+        padding-left: 0;
+        padding-top: 80px;
     }
 }
 
