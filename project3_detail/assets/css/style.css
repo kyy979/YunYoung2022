@@ -131,8 +131,15 @@ p {
     z-index: 10;
     height: 52px;
     margin-top: 320px;
-    margin-left: 80px;
+    
 }
+@media(max-width:390px) {
+    .main-btn {
+        
+        margin-left: 80px;
+    }
+}
+
 
 .main-btn::before {
     position: absolute;
@@ -191,7 +198,8 @@ p {
 
 @media(max-width:767px) {
     .section-title .title {
-        font-size: 32px
+        font-size: 32px;
+        
     }
 }
 
@@ -1252,7 +1260,7 @@ p {
 @media(max-width:767px) {
     .banner-area::before {
         background-size: 130%;
-        background-position: 10px top;
+        background-position: 40px top;
     }
 }
 
