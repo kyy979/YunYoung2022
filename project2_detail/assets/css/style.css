@@ -1260,8 +1260,8 @@ p {
 
 @media(max-width:767px) {
     .banner-area::before {
-        background-size: cover;
-        background-position: 30%
+        background-size: 130%;
+        background-position: 10px top;
     }
 }
 
