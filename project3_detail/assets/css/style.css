@@ -1251,8 +1251,8 @@ p {
 
 @media(max-width:767px) {
     .banner-area::before {
-        background-size: cover;
-        background-position: 30%
+        background-size: 130%;
+        background-position: 10px top;
     }
 }
 
@@ -1593,7 +1593,15 @@ p {
     text-transform: capitalize;
     display: block
 }
-
+@media (max-width: 390px){
+.features-area {
+    height: 352px;
+    background-image: url(../images/con1_bg.png);
+    background-repeat: no-repeat;
+    background-size: 230%;
+    background-position: center center;
+}
+}
 @media only screen and (min-width:768px) and (max-width:991px) {
     .features-area .features-btn .nav li a span {
         font-size: 16px
@@ -1956,11 +1964,6 @@ p {
     margin: 0 auto;
     padding-top: 150px;
 }
-@media(max-width:390px) {
-    .about-area {
-        padding-top: 80px;
-    }
-}
 
 
 @media only screen and (min-width:768px) and (max-width:991px) {
@@ -1971,7 +1974,8 @@ p {
 
 @media(max-width:767px) {
     .about-area .about-thumb {
-        padding-left: 0
+        padding-left: 0;
+        padding-top: 80px;
     }
 }
 
